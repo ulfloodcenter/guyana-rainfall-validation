@@ -1,32 +1,54 @@
-# Guyana IMERG Rainfall Validation — interactive dashboard
+# Guyana Rainfall Validation Dashboard
 
-This repository hosts the static interactive dashboard developed by the University of Louisiana at Lafayette and Louisiana Watershed Flood Center for IMERG rainfall validation in Guyana.
+**Assessment of NASA GPM IMERG V07 Precipitation Against Ground-Based Rainfall Observations**
 
-## Publish with GitHub Pages
+**Research project:** Collaboratively Designed and Managed Flood Resilience Framework for Affected Communities in the Caribbean Region  
+**Institution:** University of Louisiana at Lafayette · Louisiana Watershed Flood Center  
+**Funding:** U.S. National Science Foundation, Award No. 2426270
 
-1. Create a public GitHub repository (e.g., `guyana-rainfall-validation`).
-2. Upload `index.html` and `README.md` to the repository root.
-3. Under **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
-4. Open `https://YOUR-USERNAME.github.io/guyana-rainfall-validation/` and verify charts, station controls, and map tiles.
+## Research Team
 
-## HydroShare archival workflow
+| Role | Name | Contact |
+|---|---|---|
+| Principal Investigator | Dr. Emad Habib | [emad.habib@louisiana.edu](mailto:emad.habib@louisiana.edu) |
+| Research Engineer | Dr. Mohamed Morsy | [mohamed.morsy@louisiana.edu](mailto:mohamed.morsy@louisiana.edu) |
+| PhD Candidate | Gregory Williams | [gregory.williams2@louisiana.edu](mailto:gregory.williams2@louisiana.edu) |
 
-1. Create a HydroShare resource with the dashboard HTML, this README, and, if appropriate, underlying data/method documentation.
-2. Describe data provenance, gauge observations, IMERG product/version, study period, quality control, and limitations in the resource metadata.
-3. Publish the resource and obtain its permanent DOI.
-4. Replace **both** placeholders in `index.html` (`HydroShare DOI: pending assignment.` and `HydroShare resource link to be added after publication.`) with the actual DOI and resource URL. Do not invent a DOI.
-5. Add the live GitHub Pages URL to the HydroShare resource description.
+**Explore the interactive dashboard:** https://ulfloodcenter.github.io/guyana-rainfall-validation/
 
-## Citation
+## Overview
 
-Suggested citation, to be finalized with the resource's official authors and DOI:
+This dashboard evaluates NASA Global Precipitation Measurement (GPM) IMERG Version 07 precipitation estimates against ground-based rainfall observations in Guyana. The assessment examines the suitability of the processed IMERG rainfall field as input to a HEC-RAS 2D flood model, focusing on rainfall magnitude, timing, spatial differences, occurrence, and intense rainfall.
 
-Habib, E., Morsy, M., and Williams, G. (2026). *Guyana IMERG Rainfall Validation: Interactive Dashboard*. University of Louisiana at Lafayette and Louisiana Watershed Flood Center. HydroShare. DOI: [to be assigned].
+## Data and Approach
 
-## Dependencies and reproducibility
+The primary assessment covers **2020–2021**, using **nine stations** with sufficiently complete daily observations and **6,517 paired station-days**. Daily gauge observations were compared with rainfall extracted from the nearest valid cell of the processed IMERG V07 grid. A **3 × 3 grid-cell neighborhood mean** was also examined to assess point-to-grid representativeness.
 
-The dashboard embeds its visualization data and logos, and loads Plotly 2.35.2 and Leaflet 1.9.4 from external CDNs. Online map tiles may also be required. It is not fully offline-capable. Static hosting does not require a backend. Validate browser behavior before sharing publicly.
+Diagnostics include cumulative percentage bias (PBIAS), daily correlation, mean absolute error (MAE), root mean square error (RMSE), wet-day detection statistics (using a 1 mm/day threshold), station-to-station variability, rainfall-intensity and monthly biases, selected storm events, and sensitivity to the daily accumulation boundary.
 
-## Version
+## Key Findings
 
-1.0 — November 11, 2026 (GitHub Pages packaging; original scientific dashboard code and embedded data preserved).
+- **Overall volume:** Pooled PBIAS was approximately **−2.0%** over 2020–2021, but station-level PBIAS ranged from approximately **−18.6% to +19.4%**.
+- **Daily agreement:** Pooled daily Pearson correlation was approximately **0.66** after the best-performing daily accumulation alignment.
+- **High rainfall:** IMERG tended to overrepresent light rainfall and underestimate heavier rainfall; the observed **≥100 mm/day** class was underestimated by approximately **52%** in the available sample.
+- **Uniform correction:** A correction factor estimated from 2020 improved 2021 cumulative bias but slightly worsened daily RMSE, indicating that a single multiplier does not necessarily improve rainfall timing or event magnitudes.
+
+These findings underscore why near-neutral long-period volume bias should not be interpreted as evidence of accurate rainfall forcing for individual flood events.
+
+## Dashboard Features
+
+The dashboard includes an interactive station map; station-level time series, scatterplots, annual totals, and performance metrics; rainfall-intensity and seasonal diagnostics; selected-event comparisons; daily accumulation-boundary sensitivity; and a summary of the methodology and correction considerations.
+
+## Limitations
+
+Only stations with usable daily observations were included in the primary quantitative comparison; the results do not represent complete coverage of Guyana. The best-performing accumulation boundary near **12:00 UTC** is an empirical alignment result, **not** a confirmed gauge observation time. Point-gauge and gridded-rainfall estimates differ in spatial support, and daily comparisons do not establish the accuracy of subdaily rainfall intensities.
+
+## Access and Citation
+
+- **Live dashboard:** https://ulfloodcenter.github.io/guyana-rainfall-validation/
+- **HydroShare archival resource and DOI:** *To be added after publication.*
+- **Citation:** *To be finalized after confirming authorship and obtaining the HydroShare DOI.*
+
+## Acknowledgment
+
+This work was supported by the U.S. National Science Foundation under **Award No. 2426270**, *Collaboratively Designed and Managed Flood Resilience Framework for Affected Communities in the Caribbean Region*.
