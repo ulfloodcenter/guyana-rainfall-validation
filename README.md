@@ -46,8 +46,8 @@ Only stations with usable daily observations were included in the primary quanti
 ## Access and Citation
 
 - **Live dashboard:** https://ulfloodcenter.github.io/guyana-rainfall-validation/
-- **HydroShare archival resource and DOI:** *To be added after publication.*
-- **Citation:** *To be finalized after confirming authorship and obtaining the HydroShare DOI.*
+- **HydroShare archival resource and DOI:** https://www.hydroshare.org/resource/c973664457db4e5a9069f99d91385b7a/
+- **Citation:** Morsy, M., Williams, G., Habib, E. H. (2026). Guyana Rainfall Validation Dashboard: Evaluation of NASA GPM IMERG V07 Against Ground-Based Rainfall Observations, HydroShare, http://www.hydroshare.org/resource/c973664457db4e5a9069f99d91385b7a
 
 ## Acknowledgment
 
